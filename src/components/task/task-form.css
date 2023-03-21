@@ -1,0 +1,21 @@
+.task-form{
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+    background-color: rgb(199, 199, 225);
+}
+
+.task-form form {
+    display: flex;
+    justify-content: center;
+}
+
+.task-form input {
+    margin-right: 2rem;
+    flex: 1;
+    font-size: 15px;
+}
+
+.task-form button {
+    width: 150px;
+    font-size: 15px;
+}
