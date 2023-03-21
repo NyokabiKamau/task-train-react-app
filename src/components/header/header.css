@@ -1,0 +1,19 @@
+#title{
+    font-family: cursive;
+    font-size: 40px;
+    color: rgb(64, 74, 23);
+    text-align: center;
+    justify-content: center;
+}
+
+#title_start {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#title_middle {
+    color: rgb(143, 143, 213);
+
+}
+
+#title_end {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
