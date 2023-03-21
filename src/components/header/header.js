@@ -1,5 +1,6 @@
 import React from "react";
 import './header.css'
+import { GoTasklist } from 'react-icons/go'
 
 function Header() {
 
@@ -9,6 +10,7 @@ function Header() {
                 <span id="title_start">Minx'</span>
                 <span id="title_middle">s</span>
                 <span id="title_end"> Todos</span>
+                <span id="icon"> <GoTasklist/></span>
             </h1>
         </div>
     )
