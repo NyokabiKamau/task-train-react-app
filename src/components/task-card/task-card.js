@@ -7,6 +7,7 @@ function TaskCard(){
             <li className="card">
                 <h4>Task 1</h4>
                 <p>Some Description of our tasks come here .....</p>
+                <button>Delete</button>
             </li>
         </ul>
     )
