@@ -1,44 +1,30 @@
 import Header from '../header/header';
-import TodoCard from '../todo-card/todo-card';
-import TodoForm from '../task-form/todo-form';
+import { Routes, Route} from 'react-router-dom';
+import Login from '../login/login';
 import './App.css';
-import { useEffect ,useState } from 'react';
+import {useState } from 'react';
+import TodoPage from '../todo-page/todo-page';
 
 function App() {
-  const [todos, setTodos] = useState([])
-
-  const TODOS = 'https://api.npoint.io/8d81cb7e13e594ae367a'
-
-  useEffect(() => {
-    fetch(TODOS)
-    .then(r => r.json())
-    .then(data => {
-      setTodos(data.data)
-      console.log((data.data))
-    })
-  }, [])
-
-  function handleAddTodo(newTodo){
-    setTodos(item => [...item, newTodo])
+  const [token, setToken] = useState([])
+  
+  if (!token) {
+    return <Login setToken={setToken}/>
   }
 
-  
-  const list = todos.map((todo) => {
-    return (
-    <TodoCard 
-    key={todo.id}
-    title={todo.title}
-    description={todo.description}
-    status={todo.status}
-    priority={todo.priority}
-    />
-  )})
-
+  function handleLogout() {
+    setToken(null)
+  }
   return (
     <div className="App">
-      <Header/>
-      <TodoForm onAddTodo={handleAddTodo}/>
-      {list}
+      <Header token={token} onLogout={handleLogout}/>
+      <main>
+        <Routes>
+          <Route exact path="/todos" element={<TodoPage/>} />
+          <Route path="/login" exact element={<Login />} />
+        </Routes>
+
+      </main>
     </div>
   );
 }
