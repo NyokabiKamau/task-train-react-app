@@ -1,14 +1,40 @@
 import Header from '../header/header';
-import TaskCard from '../task-card/task-card';
-import TaskForm from '../task-form/task-form';
+import TodoCard from '../todo-card/todo-card';
+import TodoForm from '../task-form/todo-form';
 import './App.css';
+import { useEffect ,useState } from 'react';
 
 function App() {
+  const [todos, setTodos] = useState([])
+
+  const TODOS = 'https://api.npoint.io/8d81cb7e13e594ae367a'
+
+  useEffect(() => {
+    fetch(TODOS)
+    .then(r => r.json())
+    .then(data => {
+      setTodos(data.data)
+      console.log((data.data))
+    })
+  }, [])
+  
+  
+  const list = todos.map((todo) => {
+    return (
+    <TodoCard 
+    key={todo.id}
+    title={todo.title}
+    description={todo.description}
+    status={todo.status}
+    priority={todo.priority}
+    />
+  )})
+
   return (
     <div className="App">
       <Header/>
-      <TaskForm/>
-      <TaskCard/>
+      <TodoForm/>
+      {list}
     </div>
   );
 }

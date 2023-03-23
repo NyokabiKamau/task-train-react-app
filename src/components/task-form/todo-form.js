@@ -1,7 +1,7 @@
 import React from "react";
-import './task-form.css'
+import './todo-form.css'
 
-function TaskForm() {
+function TodoForm() {
 
     return (
         <div className="task-form">
@@ -16,4 +16,4 @@ function TaskForm() {
 
 }
 
-export default TaskForm
+export default TodoForm
