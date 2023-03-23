@@ -1,15 +1,17 @@
 import React from "react";
 import './todo-card.css'
-function TodoCard({title, description, status, priority}){
+import {MdDeleteForever} from 'react-icons/md'
+
+function TodoCard({id, title, description, status, priority, deleteTodo}){
 
     return (
         <ul className="cards">
-            <li className="card">
+            <li className="card" key={id}>
                 <h3>{title}</h3>
                 <p>{description}</p>
                 <h4>Priority: {priority}</h4>
                 <h4>Status: {status}</h4>
-                <button>Delete</button>
+                <button onClick={()=> deleteTodo(id)}><MdDeleteForever/></button>
                 <button>Edit</button>
             </li>
         </ul>
