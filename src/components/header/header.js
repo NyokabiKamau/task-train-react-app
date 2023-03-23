@@ -9,7 +9,7 @@ function Header() {
             <h1 id="title">
                 <span id="title_start">Minx'</span>
                 <span id="title_middle">s</span>
-                <span id="title_end"> Tasks</span>
+                <span id="title_end"> Todos</span>
                 <span id="icon"> <GoTasklist/></span>
             </h1>
         </div>

@@ -17,7 +17,11 @@ function App() {
       console.log((data.data))
     })
   }, [])
-  
+
+  function handleAddTodo(newTodo){
+    setTodos(item => [...item, newTodo])
+  }
+
   
   const list = todos.map((todo) => {
     return (
@@ -33,7 +37,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <TodoForm/>
+      <TodoForm onAddTodo={handleAddTodo}/>
       {list}
     </div>
   );
