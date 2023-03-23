@@ -18,7 +18,7 @@ function TodoForm({onAddTodo}) {
     }
 
     function handleSubmit(e){
-        e.preverntDefault()
+        e.preventDefault()
         fetch(TODOS, {
             method: "POST",
             headers: {
