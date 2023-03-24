@@ -8,7 +8,14 @@
 
 }
 
-#title_middle, #icon {
+#title_middle, #icon{
     color: rgb(143, 143, 213);
     font-family: cursive;
+}
+
+#logout, #login {
+    background-color: rgb(143, 143, 213);
+    color: white;
+    margin-top: 10px;
+    font-size: 20px;
 }
