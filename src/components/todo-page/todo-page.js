@@ -20,16 +20,17 @@ function TodoPage() {
     setTodos(item => [...item, newTodo])
   }
 
-  function deleteTodo(id){
-    fetch(`https://api.npoint.io/8d81cb7e13e594ae367a/${id}`,{
-      method: "DELETE"
-    })
-    .then(()=>{
-        setTodos((data) => data.filter((item) => item.id !== id))
-    })
+    function updateTodo(todo) {
+        setTodos((items) =>
+          items.map((data) => {
+            return data.id === todo.id ? todo : data;
+          })
+        );
     }
 
-  
+    function deleteTodo(id) {
+        setTodos((data) => data.filter((item) => item.id !== id))
+    }
 
   const list = todos.map((todo) => (
     <TodoCard 
@@ -39,6 +40,7 @@ function TodoPage() {
     status={todo.status}
     priority={todo.priority}
     deleteTodo={deleteTodo}
+    updateTodo={updateTodo}
     />
   ))
 

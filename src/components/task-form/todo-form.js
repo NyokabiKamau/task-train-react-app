@@ -10,11 +10,11 @@ const initialState = {
     status: "CREATED"
 }
 function TodoForm({onAddTodo}) {
-    const [todoItem, setTodoItem] = useState(initialState)
+    const [data, setData] = useState(initialState)
 
     function handleChange(e){
         e.preventDefault()
-        setTodoItem({...todoItem, [e.target.name]: e.target.value})
+        setData({...data, [e.target.name]:e.target.value})
     }
 
     function handleSubmit(e){
@@ -24,24 +24,25 @@ function TodoForm({onAddTodo}) {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({todoItem})
+            body: JSON.stringify({data})
         })
         .then(r => r.json())
         .then(newTodo => {
-            setTodoItem(initialState)
+            setData(initialState)
             onAddTodo(newTodo)
+            console.log(newTodo)
         })
     }
 
     return (
-        <div className="todo-form" onSubmit={handleSubmit}>
+        <div className="todo-form">
             <h2>New Task</h2>
-            <form>
-                <input type="text" name="title" placeholder="Title" value={todoItem.tit
+            <form onSubmit={handleSubmit}>
+                <input type="text" name="title" placeholder="Title" value={data.title
                 } onChange={handleChange}/>
-                <input type="text" name="description" placeholder="Description" value={todoItem.description} onChange={handleChange}/>
-                <input type="text" name="priority" placeholder="Priority" value={todoItem.priority} onChange={handleChange}/>
-                <input type="text" name="status" placeholder="Status" value={todoItem.status} onChange={handleChange}/>
+                <input type="text" name="description" placeholder="Description" value={data.description} onChange={handleChange}/>
+                <input type="text" name="priority" placeholder="Priority" value={data.priority} onChange={handleChange}/>
+                <input type="text" name="status" placeholder="Status" value={data.status} onChange={handleChange}/>
                 <button type="submit">Add Task</button>
             </form>
         </div>
