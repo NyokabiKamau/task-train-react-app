@@ -11,6 +11,8 @@ function App() {
   if (!token) {
     return <Login setToken={setToken}/>
   }
+  console.log(">>>>>> token ")
+  console.log(token)
 
   function handleLogout() {
     setToken(null)
@@ -21,7 +23,7 @@ function App() {
       <main>
         <Routes>
           <Route exact path="/todos" element={<TodoPage/>} />
-          <Route path="/login" exact element={<Login />} />
+          <Route path="/" exact element={<Login />} />
         </Routes>
 
       </main>

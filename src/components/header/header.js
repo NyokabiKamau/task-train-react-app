@@ -25,7 +25,7 @@ function Header({token, onLogout}) {
                     <button id="logout" onClick={handleLogout}>Logout</button>
                 </div>
             ) : (
-                <Link to="/login"><button id="login" >Login</button></Link>
+                <Link to="/"><button id="login" >Login</button></Link>
             )}
         </div>
     )

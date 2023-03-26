@@ -4,7 +4,7 @@ import { GoTasklist } from 'react-icons/go'
 import { IoIosCreate, IoIosAddCircle,  } from 'react-icons/io'
 import { MdDelete, MdEditNote } from 'react-icons/md'
 
-function Login({setToken}) {
+function Login() {
 
     // setting state
 
@@ -44,7 +44,7 @@ function Login({setToken}) {
             email,
             password
         }
-        setToken(token)
+        // setToken(token)
     }
 
     function showingonReg(){
@@ -53,7 +53,7 @@ function Login({setToken}) {
             email,
             password
         }
-        setToken(token)
+        // setToken(token)
     }
 
    
@@ -126,7 +126,7 @@ function Login({setToken}) {
             email,
             password
         }
-        setToken(token)
+        // setToken(token)
     }
 
     const handleSubmitOfReg = e => {
@@ -136,7 +136,7 @@ function Login({setToken}) {
             email,
             password
         }
-        setToken(token)
+        // setToken(token)
     }
 
     return (

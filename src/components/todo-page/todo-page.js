@@ -29,6 +29,8 @@ function TodoPage() {
     }
 
     function deleteTodo(id) {
+        console.log(">>>>> deleting")
+        // console.log
         setTodos((data) => data.filter((item) => item.id !== id))
     }
 
@@ -39,8 +41,8 @@ function TodoPage() {
     description={todo.description}
     status={todo.status}
     priority={todo.priority}
-    deleteTodo={deleteTodo}
-    updateTodo={updateTodo}
+    deleteTodo={() => deleteTodo(todo.id)}
+    updateTodo={() => updateTodo(todo)}
     />
   ))
 
