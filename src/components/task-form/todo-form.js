@@ -9,6 +9,7 @@ const initialState = {
     priority: "",
     status: "CREATED"
 }
+
 function TodoForm({onAddTodo}) {
     const [data, setData] = useState(initialState)
 
@@ -18,19 +19,20 @@ function TodoForm({onAddTodo}) {
     }
 
     function handleSubmit(e){
+        const dataToSubmit = [data]
         e.preventDefault()
         fetch(TODOS, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({data})
+            body: JSON.stringify(dataToSubmit)
         })
         .then(r => r.json())
         .then(newTodo => {
             setData(initialState)
-            onAddTodo(newTodo)
-            console.log(newTodo)
+            onAddTodo(newTodo[0])
+            console.log(newTodo[0])
         })
     }
 
